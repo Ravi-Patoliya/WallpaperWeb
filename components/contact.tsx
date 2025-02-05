@@ -47,7 +47,7 @@ export function Contact() {
               <div className="space-y-4">
                 <p className="flex items-center gap-2">
                   <span className="font-semibold">Email:</span>
-                  contact@wallpaperhub.com
+                  contact@ANIPIX.com
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="font-semibold">Phone:</span>

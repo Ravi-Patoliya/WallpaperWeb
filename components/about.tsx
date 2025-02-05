@@ -1,19 +1,26 @@
 "use client";
 
-import { Users, Crown, Star, Sparkles } from "lucide-react";
+import { Users, Crown, Star, Sparkles, Layout } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
   {
-    icon: <Users className="w-12 h-12" />,
-    title: "25 million active users",
-    description: "WallpaperHub has more than 661 million downloads",
+    icon: <Layout className="w-12 h-12" />,
+    title: "Exclusive Wallpapers",
+    description:
+      "Transform your device with handpicked, high-quality wallpapers crafted for every style.",
   },
+  // {
+  //   icon: <Users className="w-12 h-12" />,
+  //   title: "25 million active users",
+  //   description: "ANIPIX has more than 661 million downloads",
+  // },
   {
     icon: <Crown className="w-12 h-12" />,
-    title: "Free & Premium Content",
+    title: "Free Content",
+    // title: "Free & Premium Content",
     description:
-      "Millions of free pieces of content and featured content available now",
+      "Explore a vast collection of high-quality free content across various categories.",
   },
   {
     icon: <Star className="w-12 h-12" />,
@@ -23,15 +30,15 @@ const stats = [
   },
   {
     icon: <Sparkles className="w-12 h-12" />,
-    title: "AI-Powered Image Creation",
+    title: "AI Image Arts",
     description:
-      "Upload an image and let AI reimagine it, or describe your idea and watch it come to life",
+      "Our AI-powered image processing ensures the best quality for your device.",
   },
 ];
 
 export function About() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+    <section id="about" className="py-20 bg-gradient-to-b from-background to-primary/5">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}

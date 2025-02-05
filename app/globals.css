@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -53,12 +60,15 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .font-poppins {
     font-family: var(--font-poppins);
   }
+
   .font-inter {
     font-family: var(--font-inter);
   }
@@ -76,9 +86,11 @@
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }

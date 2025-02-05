@@ -99,12 +99,12 @@
 
 import { motion } from "framer-motion";
 import {
+  LayoutGrid,
   Download,
   Zap,
-  Battery,
-  Wifi,
-  CloudSun as CloudStorage,
+  Wallpaper,
   RefreshCw,
+  Radar,
 } from "lucide-react";
 
 const features = [
@@ -112,33 +112,32 @@ const features = [
     icon: <Zap className="w-6 h-6 text-[#eb0071]" />,
     title: "Fast Processing",
     description:
-      "Quick and efficient wallpaper processing for instant application",
+      "Quick and efficient wallpaper processing for instant application.",
   },
   {
-    icon: <Battery className="w-6 h-6 text-[#eb0071]" />,
-    title: "Low Power Consuming",
-    description:
-      "Optimized for minimal battery usage while maintaining performance",
+    icon: <Wallpaper className="w-6 h-6 text-[#eb0071]" />,
+    title: "4K Quality Wallpapers",
+    description: "High-resolution wallpapers that look stunning on any device.",
   },
   {
-    icon: <Wifi className="w-6 h-6 text-[#eb0071]" />,
-    title: "Wifi Compatibility",
-    description: "Seamless synchronization across all your devices",
+    icon: <Radar className="w-6 h-6 text-[#eb0071]" />,
+    title: "Diverse Anime Styles",
+    description: "our collection caters to all anime preferences.",
   },
   {
-    icon: <CloudStorage className="w-6 h-6 text-[#eb0071]" />,
-    title: "Cloud Storage",
-    description: "Access your favorite wallpapers from anywhere, anytime",
+    icon: <LayoutGrid className="w-6 h-6 text-[#eb0071]" />,
+    title: "Smart Categories",
+    description: "Easily navigate through intelligently organized themes and genres.",
   },
   {
     icon: <RefreshCw className="w-6 h-6 text-[#eb0071]" />,
     title: "Regular Updates",
-    description: "Fresh content and new features added regularly",
+    description: "Fresh content and new features added regularly.",
   },
   {
     icon: <Download className="w-6 h-6 text-[#eb0071]" />,
-    title: "Offline Access",
-    description: "Download wallpapers for offline viewing and usage",
+    title: "One-Tap Downloads",
+    description: "Instantly save your favourite wallpapers with a single touch.",
   },
 ];
 
@@ -179,14 +178,15 @@ export function Features() {
               </motion.div>
             ))}
           </div>
-          <div className="relative w-full max-w-[300px] mx-auto">
+          <div className="relative w-full max-w-[240px] mx-auto">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#eb0071] to-purple-600 rounded-[3rem] blur opacity-30"></div>
             <img
-              src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?w=400&auto=format&fit=crop&q=80"
-              alt="App Preview"
-              className="relative rounded-[2.5rem] shadow-2xl w-full"
+              src="/iphone_x_category_mockup.png"
+              alt="App Mockup Image"
+              className="relative rounded-[2.5rem] shadow-3xl w-full max-h-[480px] object-cover"
             />
           </div>
+
           <div className="grid grid-cols-1 gap-6">
             {features.slice(3).map((feature, index) => (
               <motion.div
