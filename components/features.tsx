@@ -127,7 +127,8 @@ const features = [
   {
     icon: <LayoutGrid className="w-6 h-6 text-[#eb0071]" />,
     title: "Smart Categories",
-    description: "Easily navigate through intelligently organized themes and genres.",
+    description:
+      "Easily navigate through intelligently organized themes and genres.",
   },
   {
     icon: <RefreshCw className="w-6 h-6 text-[#eb0071]" />,
@@ -137,7 +138,8 @@ const features = [
   {
     icon: <Download className="w-6 h-6 text-[#eb0071]" />,
     title: "One-Tap Downloads",
-    description: "Instantly save your favourite wallpapers with a single touch.",
+    description:
+      "Instantly save your favourite wallpapers with a single touch.",
   },
 ];
 

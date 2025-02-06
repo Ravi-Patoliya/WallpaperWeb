@@ -3,18 +3,38 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import axiosInstance from "@/helper/axiosInstance";
+import { toast } from "react-toastify";
 
 export function Contact() {
-  const { toast } = useToast();
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    // Prevent default form submission
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you soon.",
-    });
+    // Api call to send email
+    await axiosInstance
+      .post("/contact/create", contactForm)
+      .then((res) => {
+        toast.success("Message sent successfully");
+        setContactForm({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Failed to send message");
+      });
   };
 
   return (
@@ -62,13 +82,41 @@ export function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
-                  <Input placeholder="Your Name" required />
-                  <Input type="email" placeholder="Your Email" required />
-                  <Input placeholder="Subject" required />
+                  <Input
+                    placeholder="Your Name"
+                    required
+                    onChange={(e) =>
+                      setContactForm({ ...contactForm, name: e.target.value })
+                    }
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                    onChange={(e) =>
+                      setContactForm({ ...contactForm, email: e.target.value })
+                    }
+                  />
+                  <Input
+                    placeholder="Subject"
+                    required
+                    onChange={(e) =>
+                      setContactForm({
+                        ...contactForm,
+                        subject: e.target.value,
+                      })
+                    }
+                  />
                   <Textarea
                     placeholder="Your Message"
                     className="min-h-[150px]"
                     required
+                    onChange={(e) =>
+                      setContactForm({
+                        ...contactForm,
+                        message: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <Button type="submit" size="lg" className="w-full">

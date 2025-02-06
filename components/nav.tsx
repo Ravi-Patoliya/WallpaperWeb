@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

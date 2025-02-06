@@ -73,7 +73,7 @@ export function Footer() {
                 (item) => (
                   <li key={item}>
                     <Link
-                      href="#"
+                      href={item =="Privacy Policy" ? "/privacy-policy" : item =="Terms of Service" ? "/terms-of-service" : "/cookie-policy"}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       {item}
