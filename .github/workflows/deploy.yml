@@ -1,0 +1,71 @@
+name: CI/CD Pipeline for Next.js
+
+on:
+  push:
+    branches:
+    - main # Runs on push to the main branch
+  pull_request:
+    # Optional: Run CI on pull requests for pre-deployment validation
+    branches:
+    - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18 # Specify your Node.js version
+        cache: 'npm' # Enable caching for npm modules
+
+    # Step 3: Install dependencies
+    - name: Install Dependencies
+      run: npm ci # Faster and more reliable than `npm install`
+
+    # Step 4: Run linting
+    - name: Lint Code
+      run: npm run lint
+
+    # Step 5: Run tests
+    # - name: Run Tests
+    #   run: npm test
+
+    # Step 6: Build the Next.js app
+    - name: Build Next.js App
+      run: npm run build
+
+  deploy:
+    needs: build-and-test # Deploy only if the build-and-test job succeeds
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Step 2: Deploy to AWS
+    - name: Deploy to AWS EC2
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.AWS_SERVER_HOST }}
+        username: ${{ secrets.AWS_SERVER_USER }}
+        key: ${{ secrets.AWS_SERVER_SSH_KEY }}
+        port: 22
+        script: |
+          set -e # Stop execution on error for zero fault tolerance
+          echo "Pulling latest changes..."
+          cd /wallpaper/WallpaperWeb
+          git pull origin main
+          echo "Installing dependencies..."
+          npm ci
+          echo "Building application..."
+          npm run build
+          echo "Restarting server..."
+          pm2 restart wallpaperWeb || pm2 start npm --name "wallpaperWeb" -- start
