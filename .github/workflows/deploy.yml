@@ -52,7 +52,6 @@ jobs:
 
     # Step 2: Deploy to AWS
     - name: Deploy to AWS EC2
-      uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.AWS_SERVER_HOST }}
         username: ${{ secrets.AWS_SERVER_USER }}
