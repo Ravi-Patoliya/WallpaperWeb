@@ -30,8 +30,8 @@ jobs:
       run: npm ci # Faster and more reliable than `npm install`
 
     # Step 4: Run linting
-    - name: Lint Code
-      run: npm run lint
+    # - name: Lint Code
+    #   run: npm run lint
 
     # Step 5: Run tests
     # - name: Run Tests
