@@ -12,6 +12,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    environment: main
 
     steps:
     # Step 1: Checkout the repository
@@ -53,6 +54,7 @@ jobs:
     # Step 2: Deploy to AWS
     - name: Deploy to AWS EC2
       with:
+        uses: appleboy/ssh-action@master
         host: ${{ secrets.AWS_SERVER_HOST }}
         username: ${{ secrets.AWS_SERVER_USER }}
         key: ${{ secrets.AWS_SERVER_SSH_KEY }}
