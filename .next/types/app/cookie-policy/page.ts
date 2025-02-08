@@ -1,4 +1,4 @@
-// File: D:\Wallpaper product\WallpaperWeb\app\cookie-policy\page.tsx
+// File: D:\React Native\WallpaperWeb\WallpaperWeb\app\cookie-policy\page.tsx
 import * as entry from '../../../../app/cookie-policy/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

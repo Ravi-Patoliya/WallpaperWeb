@@ -1,8 +1,7 @@
 {
   "/_not-found": "/_not-found",
-  "/favicon.ico/route": "/favicon.ico",
   "/page": "/",
   "/cookie-policy/page": "/cookie-policy",
-  "/terms-of-service/page": "/terms-of-service",
-  "/privacy-policy/page": "/privacy-policy"
+  "/privacy-policy/page": "/privacy-policy",
+  "/terms-of-service/page": "/terms-of-service"
 }

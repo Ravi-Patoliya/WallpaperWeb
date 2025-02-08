@@ -1,6 +1,9 @@
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
+import ClientWrapper from "@/components/ClientWrapper";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,19 +20,17 @@ export const metadata = {
   title: "ANIPIX - Beautiful Mobile Wallpapers",
   description:
     "Discover and download stunning wallpapers for your mobile device",
-  // image: 'https://anipix.netlify.app/og-image.png',
-  // url: 'https://anipix.netlify.app',
+manifest: "/manifest.json",
   type: "website",
   keywords:
-    "wallpapers, mobile wallpapers, hd wallpapers, 4k wallpapers, anime wallpapers",
+    "wallpapers, mobile wallpapers, hd wallpapers, 4k wallpapers, anime wallpapers, art wallpapers, aesthetic ,anime art, animal wallpapers, car wallpapers, space wallpapers",
   siteName: "ANIPIX",
   locale: "en_US",
   themeColor: "#f9fafb",
   backgroundColor: "#f9fafb",
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   favicon: "./favicon.ico",
-  appleIcon: "/apple-icon.png",
-  appleIconSize: "180x180",
-  appleIconPrecomposed: true,
 };
 
 export default function RootLayout({
@@ -46,8 +47,8 @@ export default function RootLayout({
           poppins.variable
         )}
       >
-        {children}
-      </body>
+        <ClientWrapper>{children}</ClientWrapper>
+        </body>
     </html>
   );
 }
