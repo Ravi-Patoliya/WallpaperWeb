@@ -70,6 +70,6 @@ jobs:
           npm run build
           echo "Restarting server..."
           pm2 restart wallpaperWeb || pm2 start npm --name "wallpaperWeb" -- start
-          
+
     - name: Verify Deployment
-        run: curl -I http://${{ secrets.AWS_SERVER_HOST }}/healthcheck || exit 1
+      run: curl -I http://${{ secrets.AWS_SERVER_HOST }}/healthcheck || exit 1
