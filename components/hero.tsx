@@ -11,7 +11,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Make Your Phone
+              Make'z Your Phone
               <span className="block gradient-text">Beautiful & Unique</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-[600px]">
