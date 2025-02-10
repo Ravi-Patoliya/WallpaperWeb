@@ -19,15 +19,15 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
     # Step 2: Set up Node.js environment
-    # - name: Set up Node.js
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: 18 # Specify your Node.js version
-    #     cache: 'npm' # Enable caching for npm modules
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18 # Specify your Node.js version
+        cache: 'npm' # Enable caching for npm modules
 
     # Step 3: Install dependencies
-    # - name: Install Dependencies
-    #   run: npm ci # Faster and more reliable than `npm install`
+    - name: Install Dependencies
+      run: npm ci # Faster and more reliable than `npm install`
 
     # Step 4: Run linting
     # - name: Lint Code
@@ -38,8 +38,8 @@ jobs:
     #   run: npm test
 
     # Step 6: Build the Next.js app
-    # - name: Build Next.js App
-    #   run: npm run build
+    - name: Build Next.js App
+      run: npm run build
 
   deploy:
     needs: build-and-test # Deploy only if the build-and-test job succeeds
@@ -47,8 +47,8 @@ jobs:
 
     steps:
     # Step 1: Checkout the repository
-    # - name: Checkout Code
-    #   uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
     - name: Debug SSH Key
       run: |
@@ -69,7 +69,7 @@ jobs:
         script: |
           set -e
           echo "Pulling latest changes..."
-          cd /wallpaper/WallpaperWeb
+          cd wallpaper/WallpaperWeb
           git pull origin main
           echo "Installing dependencies..."
           npm ci
