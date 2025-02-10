@@ -3,9 +3,6 @@
 import { useEffect } from "react";
 
 export default function ClientWrapper({
-  children,
-}: {
-  children: React.ReactNode;
 }) {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
@@ -20,5 +17,5 @@ export default function ClientWrapper({
     }
   }, []);
 
-  return <>{children}</>;
+  return null;
 }

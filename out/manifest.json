@@ -1,0 +1,22 @@
+{
+    "name": "ANIPIX Wallpaper App",
+    "short_name": "ANIPIX",
+    "description": "A wallpaper app for anime lovers",
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "theme_color": "#EB0085",
+    "icons": [
+      {
+        "src": "/anipix-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/anipix-icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
