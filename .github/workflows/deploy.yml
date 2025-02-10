@@ -55,9 +55,9 @@ jobs:
     - name: Deploy to AWS EC2
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.AWS_SERVER_HOST }}
-        username: ${{ secrets.AWS_SERVER_USER }}
-        key: ${{ secrets.AWS_SERVER_SSH_KEY }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSHKEY }}
         port: 22
         script: |
           set -e # Stop execution on error for zero fault tolerance
