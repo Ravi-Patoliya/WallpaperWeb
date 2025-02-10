@@ -52,9 +52,9 @@ jobs:
 
     - name: Debug SSH Key
       run: |
-        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | wc -l
-        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | head -n 2
-        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | tail -n 2
+        echo "${{ secrets.SSHKEY }}" | wc -l
+        echo "${{ secrets.SSHKEY }}" | head -n 2
+        echo "${{ secrets.SSHKEY }}" | tail -n 2
 
     # Step 2: Deploy to AWS
     - name: Deploy to AWS EC2
