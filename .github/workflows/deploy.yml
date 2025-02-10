@@ -10,37 +10,37 @@ on:
     - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    environment: main
+  # build-and-test:
+  # runs-on: ubuntu-latest
+  # environment: main
 
-    steps:
-    # Step 1: Checkout the repository
-    - name: Checkout Code
-      uses: actions/checkout@v3
+  # steps:
+  # # Step 1: Checkout the repository
+  # - name: Checkout Code
+  #   uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js environment
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18 # Specify your Node.js version
-        cache: 'npm' # Enable caching for npm modules
+  # # Step 2: Set up Node.js environment
+  # - name: Set up Node.js
+  #   uses: actions/setup-node@v3
+  #   with:
+  #     node-version: 18 # Specify your Node.js version
+  #     cache: 'npm' # Enable caching for npm modules
 
-    # Step 3: Install dependencies
-    - name: Install Dependencies
-      run: npm ci # Faster and more reliable than `npm install`
+  # # Step 3: Install dependencies
+  # - name: Install Dependencies
+  #   run: npm ci # Faster and more reliable than `npm install`
 
-    # Step 4: Run linting
-    # - name: Lint Code
-    #   run: npm run lint
+  # # Step 4: Run linting
+  # # - name: Lint Code
+  # #   run: npm run lint
 
-    # Step 5: Run tests
-    # - name: Run Tests
-    #   run: npm test
+  # # Step 5: Run tests
+  # # - name: Run Tests
+  # #   run: npm test
 
-    # Step 6: Build the Next.js app
-    - name: Build Next.js App
-      run: npm run build
+  # # Step 6: Build the Next.js app
+  # - name: Build Next.js App
+  #   run: npm run build
 
   deploy:
     needs: build-and-test # Deploy only if the build-and-test job succeeds
@@ -48,8 +48,14 @@ jobs:
 
     steps:
     # Step 1: Checkout the repository
-    - name: Checkout Code
-      uses: actions/checkout@v3
+    # - name: Checkout Code
+    #   uses: actions/checkout@v3
+
+    - name: Debug SSH Key
+      run: |
+        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | wc -l
+        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | head -n 2
+        echo "${{ secrets.AWS_SERVER_SSH_KEY }}" | tail -n 2
 
     # Step 2: Deploy to AWS
     - name: Deploy to AWS EC2
