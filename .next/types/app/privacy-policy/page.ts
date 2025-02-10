@@ -1,4 +1,4 @@
-// File: D:\React Native\WallpaperWeb\WallpaperWeb\app\privacy-policy\page.tsx
+// File: D:\Wallpaper product\WallpaperWeb\app\privacy-policy\page.tsx
 import * as entry from '../../../../app/privacy-policy/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

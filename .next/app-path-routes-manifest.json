@@ -1,7 +1,7 @@
 {
   "/_not-found": "/_not-found",
   "/page": "/",
-  "/cookie-policy/page": "/cookie-policy",
   "/privacy-policy/page": "/privacy-policy",
+  "/cookie-policy/page": "/cookie-policy",
   "/terms-of-service/page": "/terms-of-service"
 }

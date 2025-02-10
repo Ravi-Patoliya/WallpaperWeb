@@ -1,4 +1,4 @@
-// File: D:\React Native\WallpaperWeb\WallpaperWeb\app\page.tsx
+// File: D:\Wallpaper product\WallpaperWeb\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
