@@ -52,6 +52,8 @@ jobs:
 
     - name: Debug SSH Key
       run: |
+        echo "${{ secrets.HOST }}" | wc -l
+        echo "${{ secrets.USER }}" | wc -l
         echo "${{ secrets.SSHKEY }}" | wc -l
         echo "${{ secrets.SSHKEY }}" | head -n 2
         echo "${{ secrets.SSHKEY }}" | tail -n 2
