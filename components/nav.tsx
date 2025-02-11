@@ -26,7 +26,7 @@ export function Navigation() {
           {["Home", "About", "Features", "Gallery", "Contact"].map((item) => (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               className="text-sm font-medium transition-colors hover:text-primary"
             >
               {item}
