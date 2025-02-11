@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 export function Hero() {
 
   const [statistics, setStatistics] = useState({
-    wallpaperCount: 0,
-    userCount: 0,
-    rating: 0,
+    wallpaperCount: null,
+    userCount: null,
+    rating: null,
   });
 
   const getDashboardStatistics = async () => {
