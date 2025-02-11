@@ -62,19 +62,19 @@ export function Hero() {
             <div className="flex items-center gap-8">
               <div>
                 <p className="text-3xl font-bold">
-                  {statistics?.wallpaperCount}
+                  {statistics?.wallpaperCount ?? "1000+"}
                 </p>
                 <p className="text-muted-foreground">Wallpapers</p>
               </div>
               <div>
                 <p className="text-3xl font-bold">
-                  {statistics?.userCount}
+                  {statistics?.userCount ?? "2k+"}
                 </p>
                 <p className="text-muted-foreground">Downloads</p>
               </div>
               <div>
                 <p className="text-3xl font-bold">
-                  {statistics?.rating}
+                  {statistics?.rating ?? "4.6"}
                 </p>
                 <p className="text-muted-foreground">Rating</p>
               </div>
