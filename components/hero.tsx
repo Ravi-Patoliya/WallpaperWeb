@@ -1,10 +1,33 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import axiosInstance from "@/helper/axiosInstance";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+
+  const [statistics, setStatistics] = useState({
+    wallpaperCount: 0,
+    userCount: 0,
+    rating: 0,
+  });
+
+  const getDashboardStatistics = async () => {
+    try {
+      const response = await axiosInstance.get("/dashboard/get");
+      const data = response.data;
+      setStatistics(data);
+    } catch (error) {
+      console.error("Error fetching statistics", error);
+    }
+  }
+
+  useEffect(() => {
+    getDashboardStatistics();
+  }, []);
+
   return (
     <section id="home" className="relative overflow-hidden">
       <div className="container min-h-[calc(100vh-4rem)] flex items-center pb-20">
@@ -38,15 +61,21 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-8">
               <div>
-                <p className="text-3xl font-bold">1000+</p>
+                <p className="text-3xl font-bold">
+                  {statistics?.wallpaperCount}
+                </p>
                 <p className="text-muted-foreground">Wallpapers</p>
               </div>
               <div>
-                <p className="text-3xl font-bold">1100+</p>
+                <p className="text-3xl font-bold">
+                  {statistics?.userCount}
+                </p>
                 <p className="text-muted-foreground">Downloads</p>
               </div>
               <div>
-                <p className="text-3xl font-bold">4.6</p>
+                <p className="text-3xl font-bold">
+                  {statistics?.rating}
+                </p>
                 <p className="text-muted-foreground">Rating</p>
               </div>
             </div>

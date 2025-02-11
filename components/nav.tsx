@@ -18,7 +18,7 @@ export function Navigation() {
           className="mr-4 flex items-center space-x-2 cursor-pointer"
           onClick={() => route.push("/")}
         >
-          <Image src="./logo.png" alt="Logo" width={50} height={50} />
+          <Image src="/logo.png" alt="Logo" width={50} height={50} />
           <span className="font-poppins text-xl font-bold">ANIPIX</span>
         </div>
 
