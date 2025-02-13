@@ -88,6 +88,7 @@ export function Contact() {
                     onChange={(e) =>
                       setContactForm({ ...contactForm, name: e.target.value })
                     }
+                    value={contactForm.name}
                   />
                   <Input
                     type="email"
@@ -96,6 +97,7 @@ export function Contact() {
                     onChange={(e) =>
                       setContactForm({ ...contactForm, email: e.target.value })
                     }
+                    value={contactForm.email}
                   />
                   <Input
                     placeholder="Subject"
@@ -106,6 +108,7 @@ export function Contact() {
                         subject: e.target.value,
                       })
                     }
+                    value={contactForm.subject}
                   />
                   <Textarea
                     placeholder="Your Message"
@@ -117,6 +120,7 @@ export function Contact() {
                         message: e.target.value,
                       })
                     }
+                    value={contactForm.message}
                   />
                 </div>
                 <Button type="submit" size="lg" className="w-full">
