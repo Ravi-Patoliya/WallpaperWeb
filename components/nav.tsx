@@ -18,7 +18,7 @@ export function Navigation() {
           className="mr-4 flex items-center space-x-2 cursor-pointer"
           onClick={() => route.push("/")}
         >
-          <Image src="./logo.png" alt="Logo" width={50} height={50} />
+          <Image src="/logo.png" alt="Logo" width={50} height={50} />
           <span className="font-poppins text-xl font-bold">ANIPIX</span>
         </div>
 
@@ -26,7 +26,7 @@ export function Navigation() {
           {["Home", "About", "Features", "Gallery", "Contact"].map((item) => (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               className="text-sm font-medium transition-colors hover:text-primary"
             >
               {item}

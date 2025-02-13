@@ -20,7 +20,7 @@ export const metadata = {
   title: "ANIPIX - Beautiful Mobile Wallpapers",
   description:
     "Discover and download stunning wallpapers for your mobile device",
-manifest: "/manifest.json",
+  manifest: "/manifest.json",
   type: "website",
   keywords:
     "wallpapers, mobile wallpapers, hd wallpapers, 4k wallpapers, anime wallpapers, art wallpapers, aesthetic ,anime art, animal wallpapers, car wallpapers, space wallpapers",
@@ -40,6 +40,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9589229761192215"
+          crossOrigin="anonymous"></script>
+      </head>
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -49,7 +55,7 @@ export default function RootLayout({
       >
         {children}
         <ClientWrapper />
-        </body>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://apiwallpaper.jenish.cloud/api/v1', 
+  baseURL: 'https://api.anipixai.com/api/v1', 
   timeout: 10000,
 });
 

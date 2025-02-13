@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               {/* <Smartphone className="h-6 w-6 text-primary" /> */}
-              <Image src="./logo.png" alt="Logo" width={50} height={50} />
+              <Image src="/logo.png" alt="Logo" width={50} height={50} />
               <span className="font-poppins text-xl font-bold">ANIPIX</span>
             </div>
             <p className="text-muted-foreground mb-4">
