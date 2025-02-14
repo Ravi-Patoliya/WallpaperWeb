@@ -17,19 +17,18 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "ANIPIX - Beautiful Mobile Wallpapers",
-  description:
-    "Discover and download stunning wallpapers for your mobile device",
+  title: "ANIPIX - Stunning Mobile & Anime Wallpapers",
+  description: "Explore and download HD, 4K, and aesthetic wallpapers for mobile. Find anime, space, car, art, and nature wallpapers to personalize your device.",
   manifest: "/manifest.json",
   type: "website",
-  keywords:
-    "wallpapers, mobile wallpapers, hd wallpapers, 4k wallpapers, anime wallpapers, art wallpapers, aesthetic ,anime art, animal wallpapers, car wallpapers, space wallpapers",
-  siteName: "ANIPIX",
+  keywords: "mobile wallpapers, HD wallpapers, 4K wallpapers, anime art, aesthetic wallpapers, nature wallpapers, space backgrounds, car wallpapers, artistic wallpapers, anime wallpapers, animal wallpapers, minimalist wallpapers",
+  siteName: "ANIPIX - Mobile Wallpapers Hub",
   locale: "en_US",
+  canonical: "https://www.anipixai.com/",
   themeColor: "#f9fafb",
   backgroundColor: "#f9fafb",
   viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+    "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, shrink-to-fit=no, viewport-fit=cover",
   favicon: "./favicon.ico",
 };
 
