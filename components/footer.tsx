@@ -36,10 +36,6 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-heading font-semibold mb-4">Quick Links</h3>
-            {/* <div
-              className="grid grid-cols-2 gap-8"
-              style={{ gridTemplateColumns: "1fr 1fr" }}
-            > */}
             <ul className="space-y-2">
               {["Home", "Features", "Gallery"].map((item) => (
                 <li key={item}>
