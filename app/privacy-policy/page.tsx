@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/nav";
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
+import { GaEvent } from "@/lib/gtag";
 
 export default function PrivacyPolicy() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -16,6 +17,12 @@ export default function PrivacyPolicy() {
         setShowScrollToTop(false);
       }
     };
+
+    GaEvent({
+      category: "Privacy Policy",
+      action: "Viewed Privacy Policy",
+      label: "Privacy Policy",
+    });
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

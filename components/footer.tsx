@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CupSoda, Send, Instagram, Youtube } from "lucide-react";
 import Image from "next/image";
+import { GaEvent } from "@/lib/gtag";
 
 export function Footer() {
   return (
@@ -69,7 +70,7 @@ export function Footer() {
                 (item) => (
                   <li key={item}>
                     <Link
-                      href={item =="Privacy Policy" ? "/privacy-policy" : item =="Terms of Service" ? "/terms-of-service" : "/cookie-policy"}
+                      href={item == "Privacy Policy" ? "/privacy-policy" : item == "Terms of Service" ? "/terms-of-service" : "/cookie-policy"}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       {item}
@@ -99,7 +100,14 @@ export function Footer() {
                 size="icon"
                 variant="ghost"
                 className="w-12 h-12 rounded-lg bg-[#eb0071]/10 flex items-center justify-center flex-shrink-0"
-                onClick={() => window.open("https://www.instagram.com/aiarteuphoria_/", "_blank")}
+                onClick={() => {
+                  window.open("https://www.instagram.com/aiarteuphoria_/", "_blank")
+                  GaEvent({
+                    category: "Social Media",
+                    action: 'Clicked on Instagram',
+                    label: 'Instagram'
+                  });
+                }}
               >
                 <Instagram className="w-6 h-6 text-[#eb0071]" />
               </Button>
@@ -107,7 +115,14 @@ export function Footer() {
                 size="icon"
                 variant="ghost"
                 className="w-12 h-12 rounded-lg bg-[#eb0071]/10 flex items-center justify-center flex-shrink-0"
-                onClick={() => window.open("https://www.youtube.com/@aiarteuphoria", "_blank")}
+                onClick={() => {
+                  window.open("https://www.youtube.com/@aiarteuphoria", "_blank")
+                  GaEvent({
+                    category: "Social Media",
+                    action: 'Clicked on Youtube',
+                    label: 'Youtube'
+                  });
+                }}
               >
                 <Youtube className="w-6 h-6 text-[#eb0071]" />
               </Button>
@@ -115,7 +130,14 @@ export function Footer() {
                 size="icon"
                 variant="ghost"
                 className="w-12 h-12 rounded-lg bg-[#eb0071]/10 flex items-center justify-center flex-shrink-0"
-                onClick={() => window.open("https://t.me/aiarteuphoria", "_blank")}
+                onClick={() => {
+                  window.open("https://t.me/aiarteuphoria", "_blank")
+                  GaEvent({
+                    category: "Social Media",
+                    action: 'Clicked on Telegram',
+                    label: 'Telegram'
+                  });
+                }}
               >
                 <Send className="w-6 h-6 text-[#eb0071]" />
               </Button>
@@ -123,7 +145,14 @@ export function Footer() {
                 size="icon"
                 variant="ghost"
                 className="w-12 h-12 rounded-lg bg-[#eb0071]/10 flex items-center justify-center flex-shrink-0"
-                onClick={() => window.open("https://buymeacoffee.com/yashsankha9?fbclid=PAZXh0bgNhZW0CMTEAAaYCrCS2K6wiaQQf7_SaptFj9zYPf6csK7rRhNinEW4_MhurEJxqDIHRcNQ_aem_L2yk93NoEd0OgVBNrcdlww", "_blank")}
+                onClick={() => {
+                  window.open("https://buymeacoffee.com/yashsankha9?fbclid=PAZXh0bgNhZW0CMTEAAaYCrCS2K6wiaQQf7_SaptFj9zYPf6csK7rRhNinEW4_MhurEJxqDIHRcNQ_aem_L2yk93NoEd0OgVBNrcdlww", "_blank")
+                  GaEvent({
+                    category: "Social Media",
+                    action: 'Clicked on Buy Me A Coffee',
+                    label: 'Buy Me A Coffee'
+                  });
+                }}
               >
                 <CupSoda className="w-6 h-6 text-[#eb0071]" />
               </Button>

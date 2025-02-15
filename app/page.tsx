@@ -11,9 +11,12 @@ import { Footer } from "@/components/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ArrowUp } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { GA_TRACKING_ID, pageview } from "../lib/gtag";
 
 export default function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const path = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +37,12 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    if (path) {
+      pageview(path); 
+    }
+  }, [path]);
 
   return (
     <main className="relative">

@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/nav";
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
+import { GaEvent } from "@/lib/gtag";
 
 export default function TermsOfService() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -16,6 +17,12 @@ export default function TermsOfService() {
         setShowScrollToTop(false);
       }
     };
+    
+    GaEvent({
+      category: "Terms of Service",
+      action: "Viewed Terms of Service",
+      label: "Terms of Service",
+    });
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

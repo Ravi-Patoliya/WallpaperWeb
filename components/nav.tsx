@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { GaEvent } from "@/lib/gtag";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,19 @@ export function Navigation() {
         <div className="hidden md:block">
           <Button
             size="lg"
-            onClick={() =>
+            onClick={() => {
+
               window.open(
                 "https://play.google.com/store/apps/details?id=com.anipix.wallpaper",
                 "_blank"
-              )
+              );
+
+              GaEvent({
+                category: "Download App",
+                action: "Downloaded App",
+                label: "Download App",
+              });
+            }
             }
           >
             Download App
@@ -71,11 +80,17 @@ export function Navigation() {
               <Button
                 className="w-full mt-4"
                 size="lg"
-                onClick={() =>
+                onClick={() => {
                   window.open(
                     "https://play.google.com/store/apps/details?id=com.anipix.wallpaper",
                     "_blank"
                   )
+                  GaEvent({
+                    category: "Download App",
+                    action: "Downloaded App",
+                    label: "Download App",
+                  });
+                }
                 }
               >
                 Download App

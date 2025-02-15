@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import axiosInstance from "@/helper/axiosInstance";
+import { GaEvent } from "@/lib/gtag";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -46,11 +47,17 @@ export function Hero() {
               <Button
                 size="lg"
                 className="text-lg"
-                onClick={() =>
+                onClick={() => {
                   window.open(
                     "https://play.google.com/store/apps/details?id=com.anipix.wallpaper",
                     "_blank"
-                  )
+                  );
+                  GaEvent({
+                    category: "Download App",
+                    action: "Downloaded App",
+                    label: "Download App",
+                  });
+                }
                 }
               >
                 Download Now

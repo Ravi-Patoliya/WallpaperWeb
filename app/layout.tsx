@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import ClientWrapper from "@/components/ClientWrapper";
+import Script from "next/script";
 
 
 const inter = Inter({
@@ -43,6 +44,17 @@ export default function RootLayout({
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9589229761192215"
           crossOrigin="anonymous"></script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HC80H6Y2CP"
+        ></Script>
+        <Script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-HC80H6Y2CP');`}
+        </Script>
       </head>
 
       <body

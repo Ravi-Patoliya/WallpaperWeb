@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import axiosInstance from "@/helper/axiosInstance";
 import { toast } from "react-toastify";
+import { GaEvent } from "@/lib/gtag";
 
 export function Contact() {
   const [contactForm, setContactForm] = useState({
@@ -35,6 +36,12 @@ export function Contact() {
         console.log(err);
         toast.error("Failed to send message");
       });
+
+    GaEvent({
+      category: 'Contact Form',
+      action: 'Submitted Contact Form',
+      label: 'Contact Form',
+    });
   };
 
   return (

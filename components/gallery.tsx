@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Download, Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import { GaEvent } from "@/lib/gtag";
 
 const wallpapers = [
   {
@@ -135,11 +136,17 @@ export function Gallery() {
         <div className="text-center mt-12">
           <Button
             size="lg"
-            onClick={() =>
+            onClick={() => {
               window.open(
                 "https://play.google.com/store/apps/details?id=com.anipix.wallpaper",
                 "_blank"
-              )
+              );
+              GaEvent({
+                category: "Download App",
+                action: "Downloaded App",
+                label: "View More Wallpapers",
+              });
+            }
             }
           >
             View More
